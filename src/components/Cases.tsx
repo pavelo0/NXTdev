@@ -1,11 +1,16 @@
-import { cases } from '@/lib/content';
+import { cases, isPublicSite } from '@/lib/content';
+
+function formatPublicUrl(url: string): string {
+	try {
+		return new URL(url).hostname.replace(/^www\./, '');
+	} catch {
+		return url;
+	}
+}
 
 export function Cases() {
 	return (
-		<section
-			id="cases"
-			className="border-t border-white/5 py-24"
-		>
+		<section id="cases" className="border-t border-white/5 py-24">
 			<div className="mx-auto max-w-6xl px-6">
 				<div className="max-w-2xl">
 					<p className="text-sm font-medium text-emerald-400">Портфолио</p>
@@ -13,7 +18,7 @@ export function Cases() {
 						Кейсы
 					</h2>
 					<p className="mt-4 text-zinc-400">
-						Первый живой кейс - этот сайт. Остальные в работе.
+						Реальные проекты студии. Этот сайт — первый опубликованный кейс.
 					</p>
 				</div>
 
@@ -39,20 +44,20 @@ export function Cases() {
 											: 'bg-zinc-800 text-zinc-500'
 									}`}
 								>
-									{item.status === 'live' ? 'Live' : 'Скоро'}
+									{item.status === 'live' ? 'В проде' : 'Скоро'}
 								</span>
 							</div>
 							<p className="mt-4 flex-1 text-sm text-zinc-500">
 								{item.description}
 							</p>
-							{item.status === 'live' && item.href && (
+							{item.status === 'live' && item.href && isPublicSite && (
 								<a
 									href={item.href}
 									target="_blank"
 									rel="noopener noreferrer"
 									className="mt-6 cursor-pointer text-sm text-emerald-400 transition-colors hover:text-emerald-300"
 								>
-									Открыть →
+									{formatPublicUrl(item.href)} →
 								</a>
 							)}
 						</li>

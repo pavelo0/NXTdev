@@ -1,4 +1,4 @@
-import { siteConfig } from '@/lib/content';
+import { heroStats, siteConfig } from '@/lib/content';
 
 export function Hero() {
 	return (
@@ -16,7 +16,7 @@ export function Hero() {
 			<div className="relative mx-auto max-w-6xl px-6">
 				<div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1 text-xs text-emerald-400">
 					<span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-					AI-assisted · developer-validated
+					Проекты под ключ · с инженерной проверкой
 				</div>
 
 				<h1 className="mt-8 max-w-3xl text-4xl font-semibold tracking-tight text-white md:text-6xl md:leading-[1.08]">
@@ -27,8 +27,8 @@ export function Hero() {
 				</h1>
 
 				<p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-400">
-					{siteConfig.description} Не просто vibe-coded - быстро собираем,
-					нормально проверяем, отдаём рабочий продукт.
+					{siteConfig.description} Быстро собираем, проверяем и отдаём рабочий
+					продукт — без сырого AI-черновика.
 				</p>
 
 				<div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -47,12 +47,7 @@ export function Hero() {
 				</div>
 
 				<dl className="mt-16 grid grid-cols-2 gap-6 border-t border-white/5 pt-10 sm:grid-cols-4">
-					{[
-						{ label: 'Фокус', value: 'Web & Mobile' },
-						{ label: 'Сроки', value: 'Быстрые' },
-						{ label: 'Стек', value: 'Next.js · Vercel' },
-						{ label: 'Подход', value: 'Под ключ' }
-					].map(item => (
+					{heroStats.map(item => (
 						<div key={item.label}>
 							<dt className="text-xs uppercase tracking-wider text-zinc-600">
 								{item.label}
