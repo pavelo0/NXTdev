@@ -30,8 +30,9 @@ export const siteConfig = {
 	description:
 		'Студия digital-разработки: лендинги, MVP, Telegram и автоматизация под ключ.',
 	url: siteUrl,
-	telegram: 'https://t.me/',
-	email: 'hello@nxtdev.dev'
+	telegram: 'https://t.me/pavelo0',
+	telegramHandle: '@pavelo0',
+	email: 'nxtdevvv@gmail.com'
 };
 
 export const heroStats = [

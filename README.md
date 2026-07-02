@@ -88,6 +88,6 @@ npx vercel --prod
 ## Контакт
 
 - Telegram и email — в `src/lib/content.ts`
-- Email по умолчанию: `hello@nxtdev.dev`
+- Email: `nxtdevvv@gmail.com`
 
 **NXT Dev** — быстрый запуск сайтов, MVP и автоматизации с инженерной проверкой.

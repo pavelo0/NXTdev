@@ -27,7 +27,7 @@ export function Contact() {
 									rel="noopener noreferrer"
 									className="cursor-pointer inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-black transition-transform hover:scale-[1.02] active:scale-[0.98]"
 								>
-									Написать в Telegram
+									Telegram · {siteConfig.telegramHandle}
 								</a>
 								<a
 									href={`mailto:${siteConfig.email}?subject=${encodeURIComponent('Проект - NXT Dev')}`}
