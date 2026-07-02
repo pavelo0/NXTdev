@@ -1,37 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NXT Dev — сайт-визитка студии
 
-## Getting Started
+Одностраничный сайт digital-студии **NXT Dev**: оффер, услуги, процесс работы, портфолио и контакт.  
+Позиционирование — **AI-assisted, developer-validated**: быстрая сборка продуктов без «сырого vibe coding».
 
-First, run the development server:
+---
+
+## О проекте
+
+Это не шаблон ради шаблона, а рабочая визитка под заказную разработку:
+
+- **Hero** — бренд, слоган, CTA
+- **Услуги** — лендинги, MVP, Telegram, e-commerce, mobile UI
+- **Процесс** — обсуждение → сборка и демо → сдача
+- **Кейсы** — живой кейс (этот сайт) + заготовки под будущие работы
+- **Контакт** — Telegram, email, подсказки для первого сообщения клиента
+
+**Стек:** Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · Vercel
+
+**Дизайн:** тёмная premium-тема, emerald-акценты, адаптив от 375px, `prefers-reduced-motion`.
+
+---
+
+## Быстрый старт
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Сборка и проверка
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+npm run lint
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Настройка контента
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Весь текст и ссылки — в одном файле:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/lib/content.ts
+```
 
-## Deploy on Vercel
+| Поле | Назначение |
+|------|------------|
+| `siteConfig.name` | Название студии |
+| `siteConfig.tagline` | Подзаголовок в hero |
+| `siteConfig.telegram` | Ссылка на Telegram |
+| `siteConfig.email` | Email для связи |
+| `services` | Блок «Услуги» |
+| `processSteps` | Блок «Процесс» |
+| `cases` | Портфолио-кейсы |
+| `contactExpectations` | Подсказки в форме контакта |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+После деплоя задайте публичный URL:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# NXTdev
+```bash
+cp .env.example .env.local
+```
+
+```env
+NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
+```
+
+Без этой переменной ссылка «NXT Dev Site» в кейсах ведёт на `localhost`.
+
+---
+
+## Deploy
+
+### Vercel (рекомендуется)
+
+1. Импортируйте репозиторий на [vercel.com/new](https://vercel.com/new)
+2. Root Directory: **`site`** (если репо монорепо) или корень, если публикуете только этот проект
+3. Добавьте `NEXT_PUBLIC_SITE_URL` в Environment Variables
+4. Deploy
+
+CLI:
+
+```bash
+npx vercel login
+npx vercel --prod
+```
+
+---
+
+## Структура
+
+```
+site/
+├── src/
+│   ├── app/              # layout, globals, page
+│   ├── components/       # Header, Hero, Services, Process, Cases, Contact, Footer
+│   └── lib/content.ts    # контент сайта
+├── public/
+├── .env.example
+└── vercel.json
+```
+
+Компоненты разбиты по секциям — правки UI локальны, контент правится без копания в JSX.
+
+---
+
+## Для кого этот репозиторий
+
+- **Клиентам** — понять, что делает NXT Dev и как начать диалог
+- **Нам** — первый кейс в портфолио и база под следующие лендинги
+- **Разработчикам** — пример чистого one-page на Next.js App Router без лишних зависимостей
+
+---
+
+## Контакт
+
+- Telegram: настраивается в `content.ts`
+- Email: `hello@nxtdev.dev` (замените на рабочий)
+
+**NXT Dev** — быстрый запуск сайтов, MVP и автоматизации с инженерной проверкой.
