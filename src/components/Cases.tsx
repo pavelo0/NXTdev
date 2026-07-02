@@ -1,4 +1,4 @@
-import { cases, isPublicSite } from '@/lib/content';
+import { cases } from '@/lib/content';
 
 function formatPublicUrl(url: string): string {
 	try {
@@ -18,7 +18,7 @@ export function Cases() {
 						Кейсы
 					</h2>
 					<p className="mt-4 text-zinc-400">
-						Реальные проекты студии. Этот сайт — первый опубликованный кейс.
+						Реальные проекты студии. Живые кейсы — со ссылками на deploy.
 					</p>
 				</div>
 
@@ -50,11 +50,15 @@ export function Cases() {
 							<p className="mt-4 flex-1 text-sm text-zinc-500">
 								{item.description}
 							</p>
-							{item.status === 'live' && item.href && isPublicSite && (
+							{item.status === 'live' && item.href && (
 								<a
 									href={item.href}
-									target="_blank"
-									rel="noopener noreferrer"
+									target={item.href.startsWith('http') ? '_blank' : undefined}
+									rel={
+										item.href.startsWith('http')
+											? 'noopener noreferrer'
+											: undefined
+									}
 									className="mt-6 cursor-pointer text-sm text-emerald-400 transition-colors hover:text-emerald-300"
 								>
 									{formatPublicUrl(item.href)} →

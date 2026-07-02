@@ -105,10 +105,12 @@ export const cases = [
 		href: siteUrl
 	},
 	{
-		title: 'Fintech Landing',
+		title: 'FlowLedger',
 		category: 'Лендинг',
-		description: 'Premium UI для SaaS и fintech-продуктов.',
-		status: 'soon' as const
+		description:
+			'Premium fintech SaaS landing — hero, pricing, FAQ. Собран за 3 дня.',
+		status: 'live' as const,
+		href: 'https://flowledger-sigma.vercel.app'
 	},
 	{
 		title: 'Telegram Bot',
@@ -119,7 +121,8 @@ export const cases = [
 	{
 		title: 'CryptoCard UI',
 		category: 'Mobile',
-		description: 'Fintech iOS — quiet luxury, полные user flows.',
+		description:
+			'Fintech iOS — quiet luxury, splash → onboarding → auth → dashboard flows.',
 		status: 'soon' as const
 	}
 ];
