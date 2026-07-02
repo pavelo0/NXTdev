@@ -28,7 +28,7 @@ export const siteConfig = {
 	name: 'NXT Dev',
 	tagline: 'Быстрый запуск digital-продуктов — с инженерной проверкой',
 	description:
-		'Студия digital-разработки: лендинги, MVP, Telegram и автоматизация под ключ.',
+		'Мы делаем лендинги, MVP, Telegram и автоматизацию под ключ.',
 	url: siteUrl,
 	telegram: 'https://t.me/pavelo0',
 	telegramHandle: '@pavelo0',
@@ -100,7 +100,7 @@ export const cases = [
 		title: 'NXT Dev',
 		category: 'Сайт-визитка',
 		description:
-			'Бренд студии, услуги, процесс работы и портфолио. Premium dark UI.',
+			'Бренд, услуги, процесс работы и портфолио. Premium dark UI.',
 		status: 'live' as const,
 		href: siteUrl
 	},
@@ -123,7 +123,8 @@ export const cases = [
 		category: 'Mobile',
 		description:
 			'Fintech iOS — quiet luxury, splash → onboarding → auth → dashboard flows.',
-		status: 'soon' as const
+		status: 'live' as const,
+		href: 'https://nx-tcryptocard.vercel.app'
 	}
 ];
 

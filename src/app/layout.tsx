@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: 'NXT Dev — digital-студия под ключ',
+	title: 'NXT Dev — digital под ключ',
 	description:
-		'Лендинги, MVP, Telegram и автоматизация под ключ. Быстрый запуск с инженерной проверкой.',
+		'Мы делаем лендинги, MVP, Telegram и автоматизацию под ключ. Быстрый запуск с инженерной проверкой.',
 	openGraph: {
 		title: 'NXT Dev',
 		description:
-			'Digital-студия: сайты, MVP и автоматизация — проекты под ключ.',
+			'Мы делаем сайты, MVP и автоматизацию — проекты под ключ.',
 		type: 'website'
 	}
 };

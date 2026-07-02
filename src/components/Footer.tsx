@@ -7,7 +7,7 @@ export function Footer() {
 		<footer className="border-t border-white/5 py-10">
 			<div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-zinc-600 sm:flex-row">
 				<p>© {year} {siteConfig.name}</p>
-				<p className="text-zinc-700">Digital-студия · проекты под ключ</p>
+				<p className="text-zinc-700">Мы · проекты под ключ</p>
 			</div>
 		</footer>
 	);
